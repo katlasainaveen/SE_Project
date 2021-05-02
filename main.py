@@ -41,23 +41,12 @@ class Passes(db.Model):
     time = db.Column(db.String(250), nullable=False)
     place = db.Column(db.String(250), nullable=False)
     date = db.Column(db.String(250), nullable=False)
+    reason = db.Column(db.String(250), nullable=False)
     status = db.Column(db.String(250), nullable=False)
 
 
 db.create_all()
 db.session.commit()
-
-
-def add():
-    db.session.add(Passes(id="6", name="34dd6de15n", roll_number="3d46ee5r",
-                          phone_number="32d14e6e5p",
-                          parents_number="34ed165pa",
-                          time="53d6e14t",
-                          place="431d65pl",
-                          date="3564dd1d",
-                          status="waiting"))
-    db.session.commit()
-
 
 @app.route("/")
 def home():
@@ -196,6 +185,7 @@ def create_new_pass(id):
         else:
             db.session.add(Passes(
                 name=data.name,
+                reason=form.reason.data,
                 roll_number=data.roll_number,
                 phone_number=data.phone_number,
                 parents_number=data.parents_number,

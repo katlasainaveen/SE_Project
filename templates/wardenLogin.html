@@ -27,7 +27,7 @@
   <!-- Main Content -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="col-lg-10 col-md-10 mx-auto">
         <h1 align="center">Pending GatePasses</h1>
         <hr>
       </div>
@@ -37,8 +37,7 @@
         <tr>
           <th scope="col">Roll #</th>
           <th scope="col">Name</th>
-          <th scope="col">Phone #</th>
-          <th scope="col">Parent's Phone #</th>
+          <th scope="col">Self & Parent's P#</th>
           <th scope="col">Time & Date</th>
           <th scope="col">Place</th>
           <th scope="col">Take Action</th>
@@ -49,13 +48,13 @@
         <tr>
           <td>{{ post.roll_number }}</td>
           <td>{{ post.name }}</td>
-          <td>{{ post.phone_number }}</td>
-          <td>{{ post.parents_number }}</td>
-          <td>{{ post.date + " ( " + post.time + " )" }}</td>
-          <td>{{ post.place }}</td>
+          <td>{{ post.phone_number }}<br>{{ post.parents_number }}</td>
+          <td>{{ post.date }} <br> {{"(" + post.time + ")" }}</td>
+          <td>{{ post.place }} <br> {{ post.reason }}</td>
           <td>
-            <a href="{{ url_for('accept_pass', id=post.id) }}" class="btn btn-success btn-sm active" role="button" aria-pressed="true">Accept</a>
-            <a href="{{ url_for('reject_pass', id=post.id) }}" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Reject</a>
+            <a href="{{ url_for('accept_pass', id=post.id) }}" class="btn btn-success btn-sm active" role="button" aria-pressed="true" style="width: 100px">Accept</a>
+            <br>
+            <a href="{{ url_for('reject_pass', id=post.id) }}" class="btn btn-danger btn-sm active" role="button" aria-pressed="true" style="width: 100px">Reject</a>
           </td>
         </tr>
         {% endfor %}

@@ -39,4 +39,5 @@ class NewWarden(FlaskForm):
 class RegisterGatepass(FlaskForm):
     time = StringField("Time", validators=[DataRequired()])
     place = StringField("Place", validators=[DataRequired()])
+    reason = StringField("Reason", validators=[DataRequired()])
     submit = SubmitField("Request Pass")

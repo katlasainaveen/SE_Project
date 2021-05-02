@@ -26,10 +26,6 @@
         <table class="table">
             <thead class="thead-dark">
             <tr>
-                <th scope="col">Roll #</th>
-                <th scope="col">Name</th>
-                <th scope="col">Phone #</th>
-                <th scope="col">Parent's Phone #</th>
                 <th scope="col">Time & Date</th>
                 <th scope="col">Place</th>
                 <th scope="col">Status</th>
@@ -38,12 +34,8 @@
             <tbody>
             {% for post in all_posts %}
             <tr>
-                <td>{{ post.roll_number }}</td>
-                <td>{{ post.name }}</td>
-                <td>{{ post.phone_number }}</td>
-                <td>{{ post.parents_number }}</td>
                 <td>{{ post.date + " ( " + post.time + " )"}}</td>
-                <td>{{ post.place }}</td>
+                <td>{{ post.place }} <br> {{ post.reason }}</td>
                 <td>{{ post.status }}</td>
             </tr>
             {% endfor %}
