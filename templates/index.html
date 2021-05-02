@@ -1,0 +1,39 @@
+{% block content %}
+{% include "header.html" %}
+
+<!-- Page Header -->
+<header class="masthead"
+        style="background-image: url('https://images.unsplash.com/photo-1569911134431-e6c169ac8f0d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>GatePass Management System</h1>
+                    <span class="subheading">GatePass made easy and simple for you.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <p>A online solution for gatepass request and approval of the same.</p>
+            <form action="{{ url_for('login') }}">
+                <button type="submit" class="btn btn-primary btn-block btn-large">Sign In as Warden.</button>
+            </form>
+            <hr>
+            <form action="{{ url_for('login') }}">
+                <button type="submit" class="btn btn-dark btn-block btn-large">Sign In as Student.</button>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+
+{% include "footer.html" %}
+{% endblock %}
