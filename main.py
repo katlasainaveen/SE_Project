@@ -1,16 +1,9 @@
-from gettext import gettext
-
-from flask import Flask, render_template, redirect, url_for, flash
+from flask import Flask, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
 from flask_bootstrap import Bootstrap
-from wtforms.validators import DataRequired
-from flask_ckeditor import CKEditor, CKEditorField
 from forms import *
 from datetime import date as dt
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask_login import current_user, login_user, logout_user, login_required, LoginManager, UserMixin
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'

@@ -1,8 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, RadioField
 from wtforms.validators import DataRequired
-from wtforms.fields.html5 import DateField
-from wtforms_components import TimeField
 
 
 class LoginForm(FlaskForm):
