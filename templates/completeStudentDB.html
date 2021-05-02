@@ -28,10 +28,11 @@
             <tr>
                 <th scope="col">Roll #</th>
                 <th scope="col">Name</th>
-                <th scope="col">Phone #</th>
-                <th scope="col">Parent's Phone #</th>
+                <th scope="col">Self P#</th>
+                <th scope="col">Parent's P#</th>
                 <th scope="col">Year & Section</th>
                 <th scope="col">Department</th>
+                <th scope="col">Reason</th>
             </tr>
             </thead>
             <tbody>
@@ -43,6 +44,7 @@
                 <td>{{ post.parents_number }}</td>
                 <td>{{ post.year_section }}</td>
                 <td>{{ post.department }}</td>
+                <td>{{ post.reason }}</td>
             </tr>
             {% endfor %}
             </tbody>
